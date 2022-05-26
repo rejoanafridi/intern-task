@@ -1,0 +1,14 @@
+.after-select{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-bottom: 20px;
+}
+
+
+.imgworld{
+     width: 50%;
+}
+.plusIcon, .minusIcon{
+     width: 40px;
+}
