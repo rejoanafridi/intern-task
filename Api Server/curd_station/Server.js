@@ -24,23 +24,11 @@ app.use(bodyParser.json());
 const connectDatabase = require("./server/config/database");
 connectDatabase();
 
-// const connectDb = async () => {
-// 	try {
-// 		await client.connect();
-// 		console.log("connected to the database");
-// 		const database = await client.db("apistation");
-// 		const stationCollection = database.collection("station");
-
-// 		// routing
-// 	} catch (error) {
-// 		console.log(error);
-// 		process.exit(1);
-// 	}
-// };
-// connectDb();
 app.use(errorHandeler);
-
+// server routes
 app.use("/api/station/", require("./server/routes/serverRoutes"));
+// auth routes
+app.use("/api/auth/", require("./server/routes/authRoutes"));
 
 app.listen(port, () =>
 	console.log(`server is running on http://localhost:${port}`)

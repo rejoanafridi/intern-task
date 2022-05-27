@@ -30,31 +30,33 @@ const postStation = asyncHandler(async (req, res) => {
 // access private
 const updateStation = asyncHandler(async (req, res) => {
 	const station = await Station.findById(req.params.id);
-	if(!station){
-		res.status(400)
+	if (!station) {
+		res.status(400);
 		throw new Error("Station item not found");
 	}
 
-	const updateStation = await Station.findByIdAndUpdate(req.params.id, req.body,{
-		new: true,
-	})
+	const updateStation = await Station.findByIdAndUpdate(
+		req.params.id,
+		req.body,
+		{
+			new: true,
+		}
+	);
 	res.status(200).json(updateStation);
 });
-
-
 
 // @route delete/api/station
 // access private
 
 const deleteStation = asyncHandler(async (req, res) => {
 	const station = await Station.findById(req.params.id);
-	if(!station){
-		res.status(400)
+	if (!station) {
+		res.status(400);
 		throw new Error("Station item not found");
 	}
-	await station.remove()
+	await station.remove();
 
-	res.status(200).json({ message: "delete station ", id:req.params.id });
+	res.status(200).json({ message: "delete station ", id: req.params.id });
 });
 
 module.exports = {
