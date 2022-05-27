@@ -1,0 +1,26 @@
+{
+	"name": "curd_station",
+	"version": "1.0.0",
+	"description": "curd server for station app",
+	"main": "Server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon start.js"
+	},
+	"keywords": [
+		"curd",
+		"mongodb"
+	],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.27.2",
+		"body-parser": "^1.20.0",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"express-async-handler": "^1.2.0",
+		"mongoose": "^6.3.4",
+		"morgan": "^1.10.0",
+		"nodemon": "^2.0.16"
+	}
+}
